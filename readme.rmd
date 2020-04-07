@@ -1,3 +1,8 @@
+---
+title: "PA_3 RMD"
+output: github_document
+---
+
 ## Load libraries and data
 
 ```{r, libs, message=F, warning=F}
