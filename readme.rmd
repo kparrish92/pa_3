@@ -1,5 +1,5 @@
 ---
-title: "PA_3 RMD"
+title: "Programming Assignment 3"
 output: github_document
 ---
 
@@ -19,6 +19,45 @@ View(vowel_data)
 ```
 
 
+###
+
+## 1. Respond to the following questions:
+## Examine the portion of the script you see below. In your own words what does this section do and why does it work? ## Demonstrate that you understand the code….
+
+vonset = Get starting point: 2, 2  
+voffset = Get end point: 2, 2
+durationV = voffset - vonset
+
+The first three lines are saying to get starting and end points within the segmented data and defining “durationV” as an item that is the difference between the onset and the offset of the vowel. “2,2” is saying that the information is in the second interval tier 
+
+
+#per20 = vonset + (durationV * 0.20)
+#per35 = vonset + (durationV * 0.35)
+#per50 = vonset + (durationV * 0.50)
+#per65 = vonset + (durationV * 0.65)
+#per80 = vonset + (durationV * 0.80)
+
+This portion is defining the percentage of the vowels at a particular duration. For example, the first line say that the new item “per20” is equal to the vonset (retrieved by the previous code) plus the duration between onset and offset time .2, to identify the precise time in ms where 20% of the way through the vowel is at a particular point in time. The following lines perform the same procedure at different time points.  
+
+## 2. In a few short sentences describe the general outline of the script, what the purpose is, and how it acheives ## this purpose (hint: focus on the section dividers and the comments)
+
+
+The first part of the script defines a relative path for the file to be saved at, the name of the file, and appends the file with column headers. 
+
+The second part tells the program where to read the data from using another relative path, and to read from files ending in .wav and .TextGrid in that filepath
+
+The loop is reading the data and telling the program where to put data from the wav and textgrid files in the spreadsheet. For example, vowel$ = Get label of interval: 2, interval   has the program read the label we gave the vowel sounds in the textgrid at interval 2 and defines this information as the object “vowel” later this information is printed to the csv file under the column “vowel”.
+
+The statistical data is likewise formulated later in the loop and assigned to objects.
+
+The end of the code makes the program write the data from these newly calculated objects to a csv file.
+
+## 3. In a few short sentences describe how the segmenting procedure you used this week differs from that used in pa_2. What are the advantages and disadvantages?
+
+The segmentation in PA_3 extracted data from one large file, rather than segmenting them into many smaller files. Only having one file can be nice to avoid potential clutter, but it seems that addressing outlier data that is the result of an anomaly in the recording process (like my dogs barking every six seconds when I am trying to record) could be more easily dealt with if a single phrase could be re-recorded and overwrite the old sound file after segmentation. 
+
+
+## 
 
 ## Descriptive statistics
 
@@ -32,9 +71,12 @@ standard_deviation_f1 = sd(vowel_data$f1_cent)
 standard_deviation_f2 = sd(vowel_data$f2_cent)
 standard_deviation_tl = sd(vowel_data$tl)
 
-
-
-
+print(mean_f1_cent)
+print(mean_f2_cent)
+print(mean_tl_cent)
+print(standard_deviation_f1)
+print(standard_deviation_f2)
+print(standard_deviation_tl)
 # -----------------------------------------------------------------------------
 ```
 
