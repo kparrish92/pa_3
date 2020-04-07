@@ -1,0 +1,4 @@
+"0","library(readr)"
+"0","vowel_data <- read_csv(""pa_3/data/vowel_data.csv"")"
+"2","Error: 'pa_3/data/vowel_data.csv' does not exist in current working directory ('C:/Users/gallo/Downloads').
+"

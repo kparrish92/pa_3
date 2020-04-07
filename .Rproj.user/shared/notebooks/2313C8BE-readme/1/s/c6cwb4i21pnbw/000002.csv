@@ -1,0 +1,3 @@
+"0","# 2. Plot F1 as a function of vowel and language ------------------------------"
+"0",""
+"0","ggplot(data = vowel_data, aes(x = vowel, y = f1_cent, color = language)) + geom_point() "
