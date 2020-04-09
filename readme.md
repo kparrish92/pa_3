@@ -231,10 +231,10 @@ vowel_means <- vowel_data %>%
 vowel_data %>% 
   mutate(vowel = forcats::fct_relevel(vowel, "u", "a", "i")) %>% 
   ggplot(., aes(x = f2_cent, y = f1_cent, color = language, label = vowel)) + 
-    geom_text(size = 3.5, alpha = 0.6, show.legend = F) + 
+    geom_text(size = 3.5, alpha = 0.6, show.legend = T) + 
     geom_path(data = vowel_means, aes(group = language, lty = language), 
               color = "grey") + 
-    geom_text(data = vowel_means, show.legend = F, size = 7) + 
+    geom_text(data = vowel_means, show.legend = T, size = 7) + 
     scale_y_reverse() + 
     scale_x_reverse() + 
     scale_color_brewer(palette = "Set1") + 
@@ -242,6 +242,10 @@ vowel_data %>%
          subtitle = "Spectral centroids of English/Spanish cardinal vowels", 
          y = "F1 (hz)", x = "F2 (hz)") + 
     theme_minimal(base_size = 16)
+```
 
+<img src="readme_files/figure-gfm/plot5-1.png" width="100%" />
+
+``` r
 # -----------------------------------------------------------------------------
 ```
